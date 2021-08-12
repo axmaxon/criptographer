@@ -1,6 +1,6 @@
 require "digest"
 
-cript_methods = %w[MD5 SHA1]
+cript_methods = %w[MD5 SHA1 SHA2]
 
 puts "Введите слово или фразу для шифрования"
 
@@ -18,5 +18,7 @@ case
 when chosen_method == "1"
   puts Digest::MD5.hexdigest user_phrase
 when chosen_method == "2"
-  puts Digest::SHA256.hexdigest user_phrase
+  puts Digest::SHA1.hexdigest user_phrase
+when chosen_method == "3"
+  puts Digest::SHA2.hexdigest user_phrase
 end
